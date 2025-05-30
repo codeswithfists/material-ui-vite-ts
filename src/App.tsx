@@ -2,7 +2,7 @@ import { Box, Container, Divider, Grid, Typography} from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import ProTip from './ProTip';
 import Copyright from './Copyright';
-import StateExamples_Counter from './components/useStateExamples';
+import {StateExamples_Coins, StateExamples_Counter} from './components/useStateExamples';
 import CallbackExamples_List from './components/useCallbackExamples';
 import { RefExamples_Counter, RefExamples_Input } from './components/useRefExamples';
 import { ContextExamples_Dashboard } from './components/useContextExamples';
@@ -26,6 +26,10 @@ export default function App() {
           <Grid size={4} padding={2} className={classes.bgBlue}>
             <Typography variant="h4">useState</Typography>
             <StateExamples_Counter />
+            <br />
+            <Divider />
+            <br />
+            <StateExamples_Coins amount={6} />
           </Grid>
 
           <Grid size={4} padding={2} className={classes.bgBlue}>
