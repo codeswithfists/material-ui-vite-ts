@@ -18,7 +18,7 @@ export function RefExamples_Counter({}: RefExamplesCounterProps) {
     // meanwhile, this function will continue to run to completion, and the value of countRef will be updated immediately.
     setCount(count + 1);
 
-    // refs are mutable objects, so we can directly modify the current property. they do trigger a re-render.
+    // refs are mutable objects, so we can directly modify the current property. they do not trigger a re-render.
     countRef.current += 1;
 
     console.log('state:', count);
@@ -31,7 +31,10 @@ export function RefExamples_Counter({}: RefExamplesCounterProps) {
         <Typography variant="h6">Count: {count}</Typography>
         <Typography variant="h6">CountRef: {countRef.current}</Typography>
       </Stack>
-      <Button variant="contained" onClick={handleIncrement}>Increment</Button>
+      <Stack direction={'row'} spacing={2} sx={{ alignItems: "center" }}>
+        <Button variant="contained" onClick={handleIncrement}>Increment</Button>
+        <Typography variant="caption">(Check logs)</Typography>
+      </Stack>
     </Box>
   )
 }
