@@ -23,22 +23,22 @@ const StateExamples_Counter = function({}) {
 
 interface StateExamples_CoinsProps { amount: number }
 const StateExamples_Coins = function(props: StateExamples_CoinsProps) {
-    // coins are all "tails" to start
-    const [coins, setCoins] = useState(Array(props.amount).fill("tails"));
+  // coins are all "tails" to start
+  const [coins, setCoins] = useState(Array(props.amount).fill("tails"));
 
-    const handleClick = (index: number) => {
-        // if a coin is clicked, then the new set of coins are all 'tails' except the one that was clicked
-        const newCoins = coins.map((_, i) => (i === index ? "heads" : "tails"));
-        setCoins(newCoins);
-    };
+  const handleClick = (index: number) => {
+    // if a coin is clicked, then the new set of coins are all 'tails' except the one that was clicked
+    const newCoins = coins.map((_, i) => (i === index ? "heads" : "tails"));
+    setCoins(newCoins);
+  };
 
-    return (
-        coins.map((value, index) => (
-            <div onClick={() => handleClick(index)}>
-                <Typography variant="h6">{value}</Typography>
-            </div>
-        ))
-    );
+  return (
+    coins.map((value, index) => (
+      <div onClick={() => handleClick(index)}>
+        <Typography variant="h6">{value}</Typography>
+      </div>
+    ))
+  );
 }
 
 export { StateExamples_Counter, StateExamples_Coins }
