@@ -17,6 +17,8 @@ function CallbackExamples_List({}: CallbackExamplesListProps) {
     // This is because the function is created once and does not capture the latest state of 'fruit'.
     console.log('The current first fruit is:', fruit[0]);
 
+    // each time the 'handleSearch' function is called, we update the 'fruit' state (which is what gets displayed in the list)
+    // so that any subsequent searches will be based on the latest state of 'fruit' and not the original 'fruitList'.
     const filteredFruit = fruitList.filter(item =>
       item.toLowerCase().includes(text.toLowerCase())
     );
